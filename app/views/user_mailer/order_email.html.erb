@@ -1,14 +1,12 @@
-<section class="orders-show">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Thank you for your order, <%= @order.email %></h2>
 
-  <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
-  </header>
-
-
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
-  </div>
-   <div class="panel panel-default items">
+  <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -36,11 +34,6 @@
       </tfoot>
     </table>
   </div>
-  <div>
-     <h4>Customer Email: <%= @order.email%></h4>
-  </div>
 
-
-  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
-</section>
+  </body>
+</html>

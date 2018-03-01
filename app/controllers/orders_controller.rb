@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @line_item = @order.line_items
+
   end
 
   def create
@@ -52,7 +54,13 @@ class OrdersController < ApplicationController
         )
       end
     end
+
     order.save!
+    if order.save
+      UserMailer.order_email(order).deliver_later
+    end
+
+
     order
   end
 
