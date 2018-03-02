@@ -15,5 +15,8 @@
   </main>
 
   <%= yield :end_of_body %>
+   <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
 </body>
 </html>
