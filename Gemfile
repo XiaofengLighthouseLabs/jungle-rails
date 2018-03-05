@@ -48,7 +48,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem "factory_bot_rails", "~> 4.0"
   gem 'shoulda-matchers', '~> 3.0'
-  gem 'database_cleaner', '~> 1.5'
   gem 'faker'
 end
 
@@ -64,4 +63,10 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
