@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "ProductDetails", type: :feature, js: true do
+RSpec.feature "AddToCarts", type: :feature, js: true do
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -21,16 +21,12 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     visit root_path
 
 
-    first('.product').click_link "Details"
+    first(".product").click_link 'Add'
 
     # DEBUG / VERIFY
 
+    expect(page).to have_content('My Cart (1)')
 
-    expect(page).to have_content (@category.products.first.name)
-    expect(page).to have_content (@category.products.first.description)
-    expect(page).to have_content (@category.products.first.quantity)
-    expect(page).to have_content (@category.products.first.price)
-    expect(page).to have_css '.product-detail', count: 1
     save_screenshot
 
 
